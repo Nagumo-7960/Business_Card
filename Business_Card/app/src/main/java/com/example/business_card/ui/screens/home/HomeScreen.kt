@@ -42,14 +42,12 @@ fun HomeScreen(navController: NavController) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .offset(
-                    y = 150.dp
+                .padding(
+                    top = 100.dp,
+                    bottom = 50.dp
                 )
         ) {
-            Column (
-                modifier = Modifier
-                    .fillMaxHeight()
-                    ){
+            Column (){
                 Row (
                     modifier = Modifier
                         .fillMaxWidth()
