@@ -133,10 +133,6 @@ fun PhoneImageCard() {
 @Composable
 fun PhoneNumberCard(){
     Text(
-        modifier = Modifier
-            .padding(
-                end = 50.dp,
-            ),
         fontSize = 20.sp,
         text = "+11(123)444 555 666"
     )
@@ -159,10 +155,6 @@ fun MediaHandleCard() {
 @Composable
 fun MediaIdCard(){
     Text(
-        modifier = Modifier
-            .padding(
-                end = 50.dp
-            ),
         fontSize = 20.sp,
         text = "@socialmediahandle"
     )
@@ -184,10 +176,6 @@ fun MailImageCard() {
 @Composable
 fun MailNumberCard(){
     Text(
-        modifier = Modifier
-            .padding(
-                end = 50.dp
-            ),
         fontSize = 20.sp,
         text = "jen.doe@android.com"
     )
