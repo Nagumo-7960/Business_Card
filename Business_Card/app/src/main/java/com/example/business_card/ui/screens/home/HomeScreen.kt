@@ -23,11 +23,8 @@ import com.example.business_card.R
 
 @Composable
 fun HomeScreen(navController: NavController) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
         Column(
+            modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Column(
@@ -36,6 +33,7 @@ fun HomeScreen(navController: NavController) {
                     .padding(
                         top = 130.dp
                     )
+                    .fillMaxWidth()
             ) {
                 AndroidIcon()
                 FullNameCard()
@@ -46,40 +44,38 @@ fun HomeScreen(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
                     .padding(
-                        top = 100.dp,
+                        top = 200.dp,
                         bottom = 50.dp
                     )
+                    .fillMaxSize()
             ) {
                 Column() {
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(
-                                top = 50.dp
+                                start = 50.dp
                             )
                     ) {
-                        PhoneImageCard()
-                        PhoneNumberCard()
+                        PhoneCard()
                     }
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(
-                                top = 50.dp
+                                start = 50.dp
                             )
                     ) {
-                        MediaHandleCard()
-                        MediaIdCard()
+                        MediaCard()
                     }
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(
-                                top = 50.dp
+                                start = 50.dp
                             )
                     ) {
-                        MailImageCard()
-                        MailNumberCard()
+                        MailCard()
                     }
                 }
                 Column {
@@ -91,7 +87,6 @@ fun HomeScreen(navController: NavController) {
             }
         }
     }
-}
 
 @Composable
 fun AndroidIcon() {
@@ -120,15 +115,53 @@ fun TitleCard() {
 }
 
 @Composable
+fun PhoneCard(){
+    Row(
+        modifier = Modifier
+            .padding(
+                top = 20.dp,
+                end = 10.dp
+            )
+    ) {
+        PhoneImageCard()
+        PhoneNumberCard()
+    }
+}
+
+@Composable
+fun MediaCard(){
+    Row(
+        modifier = Modifier
+            .padding(
+                top = 20.dp,
+                end = 10.dp
+            )
+    ) {
+        MediaHandleCard()
+        MediaIdCard()
+    }
+}
+
+@Composable
+fun MailCard(){
+    Row(
+        modifier = Modifier
+            .padding(
+                top = 20.dp,
+                end = 10.dp
+            )
+    ) {
+        MailImageCard()
+        MailNumberCard()
+    }
+}
+
+@Composable
 fun PhoneImageCard() {
     Icon(
         imageVector = Icons.Filled.Phone,
         contentDescription = "phone",
         modifier = Modifier
-            .padding(
-                start = 50.dp,
-                end = 20.dp
-            )
             .size(30.dp)
     )
 }
@@ -136,6 +169,9 @@ fun PhoneImageCard() {
 @Composable
 fun PhoneNumberCard(){
     Text(
+        modifier = Modifier.padding(
+            start = 20.dp
+        ),
         fontSize = 20.sp,
         text = "+11(123)444 555 666"
     )
@@ -145,10 +181,6 @@ fun PhoneNumberCard(){
 fun MediaHandleCard() {
     Icon(
         modifier = Modifier
-            .padding(
-                start = 50.dp,
-                end = 20.dp
-            )
             .size(30.dp),
         imageVector = Icons.Filled.Share,
         contentDescription = "media_handle"
@@ -158,6 +190,9 @@ fun MediaHandleCard() {
 @Composable
 fun MediaIdCard(){
     Text(
+        modifier = Modifier.padding(
+            start = 20.dp
+        ),
         fontSize = 20.sp,
         text = "@socialmediahandle"
     )
@@ -166,10 +201,6 @@ fun MediaIdCard(){
 fun MailImageCard() {
     Icon(
         modifier = Modifier
-            .padding(
-                start = 50.dp,
-                end = 20.dp
-            )
             .size(30.dp),
         imageVector = Icons.Filled.Email,
         contentDescription = "mail"
@@ -179,6 +210,9 @@ fun MailImageCard() {
 @Composable
 fun MailNumberCard(){
     Text(
+        modifier = Modifier.padding(
+            start = 20.dp
+        ),
         fontSize = 20.sp,
         text = "jen.doe@android.com"
     )
