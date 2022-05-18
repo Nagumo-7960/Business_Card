@@ -23,67 +23,71 @@ import com.example.business_card.R
 
 @Composable
 fun HomeScreen(navController: NavController) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
     ) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .padding(
-                    top = 130.dp
-                )
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            AndroidIcon()
-            FullNameCard()
-            TitleCard()
-        }
-
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .padding(
-                    top = 100.dp,
-                    bottom = 50.dp
-                )
-        ) {
-            Column (){
-                Row (
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(
-                            top = 50.dp
-                        )
-                        ){
-                    PhoneImageCard()
-                    PhoneNumberCard()
-                }
-                Row (
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(
-                            top = 50.dp
-                        )
-                        ){
-                    MediaHandleCard()
-                    MediaIdCard()
-                }
-                Row (
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(
-                            top = 50.dp
-                        )
-                        ){
-                    MailImageCard()
-                    MailNumberCard()
-                }
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .padding(
+                        top = 130.dp
+                    )
+            ) {
+                AndroidIcon()
+                FullNameCard()
+                TitleCard()
             }
-            Column {
 
-            }
-            Column {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .padding(
+                        top = 100.dp,
+                        bottom = 50.dp
+                    )
+            ) {
+                Column() {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                top = 50.dp
+                            )
+                    ) {
+                        PhoneImageCard()
+                        PhoneNumberCard()
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                top = 50.dp
+                            )
+                    ) {
+                        MediaHandleCard()
+                        MediaIdCard()
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                top = 50.dp
+                            )
+                    ) {
+                        MailImageCard()
+                        MailNumberCard()
+                    }
+                }
+                Column {
 
+                }
+                Column {
+
+                }
             }
         }
     }
@@ -95,7 +99,6 @@ fun AndroidIcon() {
         painter = painterResource(id = R.drawable.android_logo),
         contentDescription = "android_icon",
         modifier = Modifier
-            .fillMaxWidth()
             .height(120.dp)
     )
 }
