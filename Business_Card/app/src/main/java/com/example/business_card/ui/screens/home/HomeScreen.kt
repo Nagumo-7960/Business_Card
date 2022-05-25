@@ -1,15 +1,12 @@
 package com.example.business_card.ui.screens.home
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.Phone
-import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,70 +20,83 @@ import com.example.business_card.R
 
 @Composable
 fun HomeScreen(navController: NavController) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(
+                top = 10.dp,
+                end = 10.dp
+            ),
+
+                horizontalAlignment = Alignment . End
+    ) {
+        SettingIcon(navController)
+    }
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
         Column(
-            modifier = Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .padding(
+                    top = 130.dp
+                )
+                .fillMaxWidth()
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .padding(
-                        top = 130.dp
-                    )
-                    .fillMaxWidth()
-            ) {
-                AndroidIcon()
-                FullNameCard()
-                TitleCard()
+            AndroidIcon()
+            FullNameCard()
+            TitleCard()
+        }
+
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .padding(
+                    top = 200.dp,
+                    bottom = 50.dp
+                )
+                .fillMaxSize()
+        ) {
+            Column {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(
+                            start = 50.dp
+                        )
+                ) {
+                    PhoneCard()
+                }
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(
+                            start = 50.dp
+                        )
+                ) {
+                    MediaCard()
+                }
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(
+                            start = 50.dp
+                        )
+                ) {
+                    MailCard()
+                }
             }
+            Column {
 
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .padding(
-                        top = 200.dp,
-                        bottom = 50.dp
-                    )
-                    .fillMaxSize()
-            ) {
-                Column() {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(
-                                start = 50.dp
-                            )
-                    ) {
-                        PhoneCard()
-                    }
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(
-                                start = 50.dp
-                            )
-                    ) {
-                        MediaCard()
-                    }
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(
-                                start = 50.dp
-                            )
-                    ) {
-                        MailCard()
-                    }
-                }
-                Column {
+            }
+            Column {
 
-                }
-                Column {
-
-                }
             }
         }
     }
+}
 
 @Composable
 fun AndroidIcon() {
@@ -115,7 +125,7 @@ fun TitleCard() {
 }
 
 @Composable
-fun PhoneCard(){
+fun PhoneCard() {
     Row(
         modifier = Modifier
             .padding(
@@ -129,7 +139,7 @@ fun PhoneCard(){
 }
 
 @Composable
-fun MediaCard(){
+fun MediaCard() {
     Row(
         modifier = Modifier
             .padding(
@@ -143,7 +153,7 @@ fun MediaCard(){
 }
 
 @Composable
-fun MailCard(){
+fun MailCard() {
     Row(
         modifier = Modifier
             .padding(
@@ -167,7 +177,7 @@ fun PhoneImageCard() {
 }
 
 @Composable
-fun PhoneNumberCard(){
+fun PhoneNumberCard() {
     Text(
         modifier = Modifier.padding(
             start = 20.dp
@@ -188,7 +198,7 @@ fun MediaHandleCard() {
 }
 
 @Composable
-fun MediaIdCard(){
+fun MediaIdCard() {
     Text(
         modifier = Modifier.padding(
             start = 20.dp
@@ -197,6 +207,7 @@ fun MediaIdCard(){
         text = "@socialmediahandle"
     )
 }
+
 @Composable
 fun MailImageCard() {
     Icon(
@@ -208,13 +219,33 @@ fun MailImageCard() {
 }
 
 @Composable
-fun MailNumberCard(){
+fun MailNumberCard() {
     Text(
         modifier = Modifier.padding(
             start = 20.dp
         ),
         fontSize = 20.sp,
         text = "jen.doe@android.com"
+    )
+}
+
+@Composable
+fun SettingIcon(navController: NavController) {
+    Icon(
+        modifier = Modifier
+            .size(
+                width = 30.dp,
+                height = 30.dp
+            )
+            .clickable(
+                enabled = true,
+                onClick = {
+                    navController.navigate("settingScreen")
+
+                }
+            ),
+        imageVector = Icons.Filled.Settings,
+        contentDescription = "settings"
     )
 }
 
