@@ -6,10 +6,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.Phone
-import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,10 +20,17 @@ import com.example.business_card.R
 
 @Composable
 fun HomeScreen(navController: NavController) {
+    Column (
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.End
+            ) {
+        SettingIcon()
+    }
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
@@ -215,6 +219,19 @@ fun MailNumberCard(){
         ),
         fontSize = 20.sp,
         text = "jen.doe@android.com"
+    )
+}
+
+@Composable
+fun SettingIcon(){
+    Icon(
+        modifier = Modifier
+            .size(
+                width = 30.dp,
+                height = 30.dp
+            ),
+        imageVector = Icons.Filled.Settings,
+        contentDescription = "settings"
     )
 }
 
