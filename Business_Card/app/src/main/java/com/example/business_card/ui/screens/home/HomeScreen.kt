@@ -17,6 +17,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.business_card.R
+import com.example.business_card.ui.components.MailCard
+import com.example.business_card.ui.components.MediaCard
+import com.example.business_card.ui.components.PhoneCard
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -124,110 +127,7 @@ fun TitleCard() {
     )
 }
 
-@Composable
-fun PhoneCard() {
-    Row(
-        modifier = Modifier
-            .padding(
-                top = 20.dp,
-                end = 10.dp
-            )
-    ) {
-        PhoneImageCard()
-        PhoneNumberCard()
-    }
-}
 
-@Composable
-fun MediaCard() {
-    Row(
-        modifier = Modifier
-            .padding(
-                top = 20.dp,
-                end = 10.dp
-            )
-    ) {
-        MediaHandleCard()
-        MediaIdCard()
-    }
-}
-
-@Composable
-fun MailCard() {
-    Row(
-        modifier = Modifier
-            .padding(
-                top = 20.dp,
-                end = 10.dp
-            )
-    ) {
-        MailImageCard()
-        MailNumberCard()
-    }
-}
-
-@Composable
-fun PhoneImageCard() {
-    Icon(
-        imageVector = Icons.Filled.Phone,
-        contentDescription = "phone",
-        modifier = Modifier
-            .size(30.dp)
-    )
-}
-
-@Composable
-fun PhoneNumberCard() {
-    Text(
-        modifier = Modifier.padding(
-            start = 20.dp
-        ),
-        fontSize = 20.sp,
-        text = "+11(123)444 555 666"
-    )
-}
-
-@Composable
-fun MediaHandleCard() {
-    Icon(
-        modifier = Modifier
-            .size(30.dp),
-        imageVector = Icons.Filled.Share,
-        contentDescription = "media_handle"
-    )
-}
-
-@Composable
-fun MediaIdCard() {
-    Text(
-        modifier = Modifier.padding(
-            start = 20.dp
-        ),
-        fontSize = 20.sp,
-        text = "@socialmediahandle"
-    )
-}
-
-@Composable
-fun MailImageCard() {
-    Icon(
-        modifier = Modifier
-            .size(30.dp),
-        imageVector = Icons.Filled.Email,
-        contentDescription = "mail"
-    )
-}
-
-@Composable
-fun MailNumberCard() {
-    Text(
-        modifier = Modifier.padding(
-            start = 20.dp
-        ),
-        fontSize = 20.sp,
-        text = "jen.doe@android.com"
-    )
-}
 
 @Composable
 fun SettingIcon(navController: NavController) {
